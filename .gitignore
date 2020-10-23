@@ -1,0 +1,9 @@
+/vendor/
+/vendor_prefixed/
+.idea
+build-coverage
+.DS_Store
+.commit
+lang/wpdesk-export-pl_PL.po
+lang/wpdesk-export-pl_PL.mo
+raports
