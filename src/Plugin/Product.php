@@ -39,7 +39,7 @@ class Product {
 	 * @return int
 	 */
 	public function get_products_count() {
-		return $this->getAllProducts()->post_count;
+		return $this->get_all_products()->post_count;
 	}
 
 	/**
@@ -116,10 +116,10 @@ class Product {
 	 * Get product categories method
 	 *
 	 * @param object $product Product object.
-	 * @return array
+	 * @return Wp_Term
 	 */
 	public function get_product_categories( $product ) {
-		$categories = get_the_terms( $this->getProductId( $product ), 'product_cat' );
+		$categories = get_the_terms( $this->get_product_id( $product ), 'product_cat' );
 
 		return $categories;
 	}
@@ -141,8 +141,8 @@ class Product {
 	 * @return string
 	 */
 	public function product_categories_to_string( $product ) {
-		$category              = $this->getProductCategories( $product );
-		$categoryNames         = $this->getOnlyCategoriesNames( $category );
+		$category              = $this->get_product_categories( $product );
+		$categoryNames         = $this->get_only_categories_names( $category );
 		$categoryNamesToString = implode( ',', $categoryNames );
 
 		return $categoryNamesToString;
