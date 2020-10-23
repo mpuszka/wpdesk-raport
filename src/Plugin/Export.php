@@ -69,7 +69,7 @@ class Export {
 			$form
 		);
 
-		echo esc_html( $form );
+		echo $form;
 	}
 
 	/**
